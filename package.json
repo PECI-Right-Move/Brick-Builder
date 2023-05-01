@@ -3,15 +3,15 @@
   "version": "0.1.0",
   "description": "React based brick builder",
   "main": "index.js",
-  "homepage": "https://peci-right-move.github.io/Brick-Builder/",
+  "homepage":  "https://peci-right-move.github.io/Brick-Builder/",
   "scripts": {
     "clean": "rimraf docs/",
     "start": "webpack-dev-server --progress --config webpack.dev.config.js",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d docs",
     "build": "npm run clean && webpack --progress --config webpack.config.js -p",
     "webpack": "webpack"
-  },  
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/nicmosc/brick-builder"
