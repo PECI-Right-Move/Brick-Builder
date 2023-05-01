@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "React based brick builder",
   "main": "index.js",
-  "homepage":  "https://peci-right-move.github.io/Brick-Builder/",
+  "homepage": "https://peci-right-move.github.io/Brick-Builder/",
   "scripts": {
     "clean": "rimraf docs/",
     "start": "webpack-dev-server --progress --config webpack.dev.config.js",
