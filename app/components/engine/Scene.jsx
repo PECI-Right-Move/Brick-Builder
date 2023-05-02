@@ -109,11 +109,11 @@ class Scene extends React.Component {
     pointLight.position.set( -1000, 1500, 500 );
     this.scene.add( pointLight );
 
-    const plane = new Plane(3000);
+    const plane = new Plane(400);
     this.plane = plane;
     this.scene.add(plane);
 
-    const grid = new THREE.GridHelper( 1500, 60, new THREE.Color( 0xbfbfbf ), new THREE.Color( 0xdedede ) );
+    const grid = new THREE.GridHelper( 400, 16, new THREE.Color( 0xbfbfbf ), new THREE.Color( 0xdedede ) );
     this.grid = grid;
     this.scene.add(grid);
 
