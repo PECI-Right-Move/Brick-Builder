@@ -41,7 +41,7 @@ export const B1x1 = () => {
 }
 
 
-export const B2x1 = () => {
+export const B2x1x1 = () => {
   return (
     <svg height="100%" viewBox="0 0 81 93">
       <defs>
@@ -71,8 +71,37 @@ export const B2x1 = () => {
   );
 }
 
+export const B2x1x2 = () => {
+  return (
+    <svg height="100%" viewBox="0 0 81 93">
+      <defs>
+        <linearGradient x1="8.42483761%" y1="50%" x2="100%" y2="62.9645067%" id="linearGradient-1">
+          <stop stopColor="#FFC058" offset="0%"></stop>
+          <stop stopColor="#FDB43B" offset="100%"></stop>
+        </linearGradient>
+      </defs>
+      <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
+        <g id="Desktop" transform="translate(-431.000000, -308.000000)">
+          <g id="Group-Copy-5" transform="translate(471.500000, 354.500000) scale(-1, 1) translate(-471.500000, -354.500000) translate(431.000000, 308.000000)">
+            <polygon id="Rectangle-4" fill="#EA9100" points="0 20 54 57 54 93 0 56"></polygon>
+            <polygon id="Rectangle-4-Copy" fill="#FFC058" points="27 0.5 81 38 54 57 0 20"></polygon>
+            <polygon id="Rectangle" fill="#F5A623" points="54 57 81 38 81 74 54 93"></polygon>
+            <g id="Group-2" transform="translate(16.000000, 5.000000)">
+              <path d="M12,23 C18.627417,23 24,19.418278 24,15 C24,12.1878766 24,9.68787658 24,7.5 L0,7.5 C1.10578213e-13,9.7172403 1.6586732e-13,12.2172403 1.6586732e-13,15 C1.6586732e-13,19.418278 5.372583,23 12,23 Z" id="Oval-Copy" fill="#EB9507"></path>
+              <ellipse id="Oval" fill="url(#linearGradient-1)" cx="12" cy="8" rx="12" ry="8"></ellipse>
+            </g>
+            <g id="Group-2-Copy" transform="translate(42.000000, 24.000000)">
+              <path d="M12,23 C18.627417,23 24,19.418278 24,15 C24,12.1878766 24,9.68787658 24,7.5 L0,7.5 C1.10578213e-13,9.7172403 1.6586732e-13,12.2172403 1.6586732e-13,15 C1.6586732e-13,19.418278 5.372583,23 12,23 Z" id="Oval-Copy" fill="#EB9507"></path>
+              <ellipse id="Oval" fill="url(#linearGradient-1)" cx="12" cy="8" rx="12" ry="8"></ellipse>
+            </g>
+          </g>
+        </g>
+      </g>
+    </svg>
+  );
+}
 
-export const B2x2 = () => {
+export const B2x2x1 = () => {
   return (
     <svg height="100%" viewBox="0 0 110 114" version="1.1">
       <defs>
@@ -110,6 +139,43 @@ export const B2x2 = () => {
   );
 }
 
+export const B2x2x2 = () => {
+  return (
+    <svg height="100%" viewBox="0 0 110 114" version="1.1">
+      <defs>
+        <linearGradient x1="8.42483761%" y1="50%" x2="100%" y2="62.9645067%" id="linearGradient-1">
+          <stop stopColor="#FFC058" offset="0%"></stop>
+          <stop stopColor="#FDB43B" offset="100%"></stop>
+        </linearGradient>
+      </defs>
+      <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
+        <g id="Desktop" transform="translate(-830.000000, -172.000000)">
+          <g id="Group-Copy-3" transform="translate(830.000000, 172.000000)">
+            <polygon id="Rectangle-4" fill="#EB9507" points="0 41 54 78 54 114 0 77"></polygon>
+            <polygon id="Rectangle-4-Copy" fill="#FFC058" points="55.5 0 109.5 39 54 78 0 41"></polygon>
+            <polygon id="Rectangle" fill="#D58400" points="54 78 109.5 39 109.5 75 54 114"></polygon>
+            <g id="Group-2" transform="translate(16.000000, 26.000000)">
+              <path d="M12,23 C18.627417,23 24,19.418278 24,15 C24,12.1878766 24,9.68787658 24,7.5 L0,7.5 C1.10578213e-13,9.7172403 1.6586732e-13,12.2172403 1.6586732e-13,15 C1.6586732e-13,19.418278 5.372583,23 12,23 Z" id="Oval-Copy" fill="#EB9507"></path>
+              <ellipse id="Oval" fill="url(#linearGradient-1)" cx="12" cy="8" rx="12" ry="8"></ellipse>
+            </g>
+            <g id="Group-2-Copy-2" transform="translate(43.000000, 6.000000)">
+              <path d="M12,23 C18.627417,23 24,19.418278 24,15 C24,12.1878766 24,9.68787658 24,7.5 L0,7.5 C1.10578213e-13,9.7172403 1.6586732e-13,12.2172403 1.6586732e-13,15 C1.6586732e-13,19.418278 5.372583,23 12,23 Z" id="Oval-Copy" fill="#EB9507"></path>
+              <ellipse id="Oval" fill="url(#linearGradient-1)" cx="12" cy="8" rx="12" ry="8"></ellipse>
+            </g>
+            <g id="Group-2-Copy" transform="translate(42.000000, 45.000000)">
+              <path d="M12,23 C18.627417,23 24,19.418278 24,15 C24,12.1878766 24,9.68787658 24,7.5 L0,7.5 C1.10578213e-13,9.7172403 1.6586732e-13,12.2172403 1.6586732e-13,15 C1.6586732e-13,19.418278 5.372583,23 12,23 Z" id="Oval-Copy" fill="#EB9507"></path>
+              <ellipse id="Oval" fill="url(#linearGradient-1)" cx="12" cy="8" rx="12" ry="8"></ellipse>
+            </g>
+            <g id="Group-2-Copy-3" transform="translate(69.000000, 25.000000)">
+              <path d="M12,23 C18.627417,23 24,19.418278 24,15 C24,12.1878766 24,9.68787658 24,7.5 L0,7.5 C1.10578213e-13,9.7172403 1.6586732e-13,12.2172403 1.6586732e-13,15 C1.6586732e-13,19.418278 5.372583,23 12,23 Z" id="Oval-Copy" fill="#EB9507"></path>
+              <ellipse id="Oval" fill="url(#linearGradient-1)" cx="12" cy="8" rx="12" ry="8"></ellipse>
+            </g>
+          </g>
+        </g>
+      </g>
+    </svg>
+  );
+}
 
 export const B3x1 = () => {
   return (
@@ -232,7 +298,7 @@ export const B4x1 = () => {
 }
 
 
-export const B4x2 = () => {
+export const B4x2x1 = () => {
   return (
     <svg height="100%" viewBox="0 0 162 150">
       <defs>

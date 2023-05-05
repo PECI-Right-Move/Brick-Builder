@@ -35,11 +35,11 @@ export function getMeasurementsFromDimensions({ x, y, z }) {
 
 
 export function displayNameFromDimensions(dimensions) {
-  return `${dimensions.x}x${dimensions.z}`;
+  return `${dimensions.x}x${dimensions.z}x${dimensions.y}`;
 }
 
 
 export function getBrickIconFromDimensions(dimensions) {
-  const Icon = Icons[`B${dimensions.x}x${dimensions.z}`];
+  const Icon = Icons[`B${dimensions.x}x${dimensions.z}x${dimensions.y}`];
   return <Icon />;
 }
