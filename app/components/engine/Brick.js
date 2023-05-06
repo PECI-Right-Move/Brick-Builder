@@ -74,9 +74,13 @@ function createMesh(material, width, height, depth, dimensions) {
   for ( var i = 0; i < dimensions.x; i++ ) {
     for ( var j = 0; j < dimensions.z; j++ ) {
       const cylinder = new THREE.Mesh(cylinderGeo, material);
-      cylinder.position.x = base * i - ((dimensions.x - 1) * base / 2),
-      cylinder.position.y = base / 1.5,  // TODO to be reworked
-      cylinder.position.z = base * j - ((dimensions.z - 1) * base / 2),
+      if (height == 50) {
+        cylinder.position.y = base * 1.2;  // TODO to be reworked
+      } else {
+        cylinder.position.y = base / 1.5;
+      }
+      cylinder.position.x = base * i - ((dimensions.x - 1) * base / 2);
+      cylinder.position.z = base * j - ((dimensions.z - 1) * base / 2);
 
       cylinder.castShadow = true;
       cylinder.receiveShadow = true;

@@ -22,7 +22,6 @@ export class RollOverBrick extends THREE.Mesh {
       this.rotateY( -this.rotated );
     }
     this.rotated = null;
-    console.log('set shape, reset');
   }
 
   rotate(angle) {

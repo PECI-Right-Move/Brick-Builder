@@ -51,22 +51,22 @@ class Scene extends React.Component {
 
   componentDidUpdate(prevProps) {
     const { mode, grid, dimensions, objects } = this.props;
-    if (mode !== prevProps.mode && mode === "paint") {
-      this.rollOverBrick.visible = false;
-    } else if (mode !== prevProps.mode && mode === "build") {
-      this.rollOverBrick.visible = true;
-    }
+     if (mode !== prevProps.mode && mode === "paint") {
+       this.rollOverBrick.visible = false;
+     } else if (mode !== prevProps.mode && mode === "build") {
+       this.rollOverBrick.visible = true;
+     }
 
-    if (grid !== prevProps.grid && grid === true) {
-      this.grid.visible = false;
-    } else if (grid !== prevProps.grid && grid !== true) {
-      this.grid.visible = false;
-    } else if (
-      prevProps.dimensions.x !== dimensions.x ||
-      prevProps.dimensions.z !== dimensions.z
-    ) {
-      this.rollOverBrick.setShape(dimensions);
-    }
+    // if (grid !== prevProps.grid && grid === true) {
+    //   this.grid.visible = false;
+    // } else if (grid !== prevProps.grid && grid !== true) {
+    //   this.grid.visible = false;
+    // } else if (
+    //   prevProps.dimensions.x !== dimensions.x ||
+    //   prevProps.dimensions.z !== dimensions.z
+    // ) {
+       this.rollOverBrick.setShape(dimensions);
+    // }
 
     if (objects.length !== prevProps.objects.length) {
       this._setObjectsFromState();
@@ -117,15 +117,21 @@ class Scene extends React.Component {
     this.plane = plane;
     this.scene.add(plane);
 
-    const grid = new THREE.GridHelper(
-      400,
-      16,
-      new THREE.Color(0xbfbfbf),
-      new THREE.Color(0xdedede)
-    );
-    this.grid = grid;
+    // const grid = new THREE.GridHelper(
+    //   400,
+    //   16,
+    //   new THREE.Color(0xbfbfbf),
+    //   new THREE.Color(0xdedede)
+    // );
     // this.scene.add(grid);
 
+    this._setGrid();
+    this.setState({
+      coreObjects: [light, ambientLight, pointLight, plane, this.rollOverBrick],
+    });
+  }
+
+  _setGrid() {
     var test = [];
     var qty = 2;
     var hz_qty = 200;
@@ -136,17 +142,6 @@ class Scene extends React.Component {
       test[p].position.set(-half_hz + hz_qty * p - hz_qty / 2, 0, 0);
       this.scene.add(test[p]);
     }
-
-    this.setState({
-      coreObjects: [
-        light,
-        ambientLight,
-        pointLight,
-        plane,
-        grid,
-        this.rollOverBrick,
-      ],
-    });
   }
 
   _initUtils() {
@@ -321,6 +316,7 @@ class Scene extends React.Component {
         translation
       );
       addObject(brick);
+      this._setGrid();
     }
   }
 
