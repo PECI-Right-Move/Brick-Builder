@@ -27,7 +27,7 @@ class Scene extends React.Component {
     isDDown: false,
     isRDown: false,
     rotation: 0,
-    coreObjects: [],
+    coreObjects: []
   };
 
   constructor(props) {
@@ -159,6 +159,7 @@ class Scene extends React.Component {
     const { objects } = this.props;
     const { coreObjects } = this.state;
     this.scene.children = [...objects, ...coreObjects];
+    this._setGrid();
   }
 
   _setEventListeners() {
