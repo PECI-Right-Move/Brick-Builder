@@ -10,7 +10,8 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d docs",
     "build": "npm run clean && webpack --progress --config webpack.config.js -p",
-    "webpack": "webpack"
+    "webpack": "webpack",
+    "publish": "gh-pages -d app"
   },
   "repository": {
     "type": "git",
@@ -46,7 +47,7 @@
     "react-redux": "^5.0.6",
     "redux": "^3.7.2",
     "style-loader": "^0.18.1",
-    "uglifyjs-webpack-plugin": "^2.1.1",
+    "uglifyjs-webpack-plugin": "^2.2.0",
     "url-loader": "^1.1.2",
     "webpack": "^4.28.4",
     "webpack-cli": "^3.2.1",

@@ -1,6 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const Uglify = require("uglifyjs-webpack-plugin");
 
 const webpackBaseConfig = require('./webpack.base.config.js');
 const packageJson = require('./package.json');
@@ -29,9 +29,7 @@ module.exports = Object.assign({}, webpackBaseConfig, {
   ],
   optimization: {
     minimizer: [
-      new UglifyJsPlugin({
-        sourceMap: true,
-      }),
+      new Uglify(),
     ],
   },
 });
