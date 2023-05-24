@@ -1,18 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
 import { saveAs } from "file-saver";
 import autobind from "autobind-decorator";
+import { QRCode } from "react-qr-svg";
+import html2canvas from "html2canvas";
 
 import FileUploader from "./FileUploader";
 import Brick from "components/engine/Brick";
 
 import styles from "../styles/components/sidebar";
+import domtoimage from "dom-to-image";
 
-import QRCode from "qrcode";
+// import QRCode from "qrcode";
+
+class QRCodeGenerator extends React.Component {
+  render() {
+    const { qrCodeValue } = this.props;
+
+    return <QRCode level="Q" style={{ width: 350 }} value={qrCodeValue} />;
+  }
+}
 
 class Sidebar extends React.Component {
+  state = {
+    qrCodeValue: {},
+  };
 
   render() {
     const { utilsOpen, resetScene } = this.props;
+    const { qrCodeValue } = this.state;
     return (
       <div className={utilsOpen ? styles.visible : styles.sidebar}>
         <div className={styles.content}>
@@ -37,6 +52,20 @@ class Sidebar extends React.Component {
             </FileUploader>
           </div>
           <div className={styles.row} onClick={this.qr_code}>
+            <div className={styles.text}>
+              <i className="ion-log-out" />
+              <span>Update QR Code</span>
+            </div>
+          </div>
+          <div id="qrCodeContainer">
+          <QRCode
+              id="qrCode"
+              level="Q"
+              style={{ width: 350 }}
+              value={qrCodeValue}
+            />
+          </div>
+          <div className={styles.row} onClick={this.testDownloadQRCode}>
             <div className={styles.text}>
               <i className="ion-log-out" />
               <span>Download QR Code</span>
@@ -135,7 +164,7 @@ class Sidebar extends React.Component {
 
       jsonObject["instructions"]["steps"].push({
         idPiece: full_piece_id,
-        idStep: "example" + "00" + index,
+        idStep: "rightmove" + "00" + index,
         color: color,
         coordinatesA: { x: x, y: y },
         coordinatesB: {
@@ -144,24 +173,42 @@ class Sidebar extends React.Component {
         },
       });
     }
-    this.downloadQRCode(JSON.stringify(jsonObject));
-    return jsonObject;
+    const qrCodeValue = JSON.stringify(jsonObject);
+    this.setState({ qrCodeValue });
   }
 
-   downloadQRCode (value) {
-    const canvas = document.createElement("canvas");
-    QRCode.toCanvas(canvas, value)
-      .then(() => {
-        const dataURL = canvas.toDataURL("image/png");
-        const link = document.createElement("a");
-        link.href = dataURL;
-        link.download = "qrcode.png";
-        link.click();
-      })
-      .catch((error) => {
-        console.error("Error generating QR code:", error);
-      });
-  };
+  @autobind
+  testDownloadQRCode() {
+    const { qrCodeValue } = this.state;
+
+    html2canvas(document.getElementById("qrCodeContainer"), {
+      useCORS: true,
+      allowTaint: true,
+      preserveDrawingBuffer: true
+    }).then((canvas) => {
+      const dataURL = canvas.toDataURL("image/jpeg");
+      const link = document.createElement("a");
+      link.href = dataURL;
+      link.download = "qrcode.jpg";
+      link.click();
+    });
+  }
+
+
+  //  downloadQRCode (value) {
+  //   const canvas = document.createElement("canvas");
+  //   QRCode.toCanvas(canvas, value)
+  //     .then(() => {
+  //       const dataURL = canvas.toDataURL("image/png");
+  //       const link = document.createElement("a");
+  //       link.href = dataURL;
+  //       link.download = "qrcode.png";
+  //       link.click();
+  //     })
+  //     .catch((error) => {
+  //       console.error("Error generating QR code:", error);
+  //     });
+  // };
 
   // TODO: bad, do this in epic/saga/thunk but not here
   @autobind
