@@ -99,10 +99,10 @@ class Sidebar extends React.Component {
     const { objects } = this.props;
     var jsonObject = {};
     jsonObject["instructions"] = {};
-    jsonObject["instructions"]["assembly"] = "example";
+    jsonObject["instructions"]["assembly"] = "rightmove";
     jsonObject["instructions"]["steps"] = [];
 
-    jsonObject["assemblyId"] = "Teste";
+    jsonObject["assemblyId"] = "rightmove";
     jsonObject["name"] = "example";
     for (let index = 0; index < objects.length; index++) {
       var color;
