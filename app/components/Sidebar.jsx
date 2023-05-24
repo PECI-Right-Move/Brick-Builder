@@ -164,7 +164,7 @@ class Sidebar extends React.Component {
 
       jsonObject["instructions"]["steps"].push({
         idPiece: full_piece_id,
-        idStep: "rightmove" + "00" + index,
+        idStep: "rightmove",
         color: color,
         coordinatesA: { x: x, y: y },
         coordinatesB: {
